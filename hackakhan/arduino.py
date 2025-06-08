@@ -9,7 +9,9 @@ try:
     while True:
         if ser.in_waiting > 0:
             data = ser.readline().decode().strip() 
-            print(data)
+            temp = float(data[0:5])
+            humidity = float(data[6:])
+            print(temp, humidity)
 except KeyboardInterrupt:
     print("Program ended")
 finally:
